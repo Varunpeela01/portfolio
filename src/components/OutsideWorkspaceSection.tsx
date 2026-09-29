@@ -30,15 +30,19 @@ export const OutsideWorkspaceSection: React.FC = () => {
           {/* 1. Photography (Wide - Spans 2 columns) */}
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0A0E17] group hover:border-sky-500/40 hover:shadow-[0_0_40px_rgba(56,189,248,0.1)] transition-all duration-700 md:col-span-2">
             {/* Video Background */}
-            <div className="absolute inset-0 bg-black">
+            <div className="absolute inset-0 bg-[#0A0E17]">
               <video
-                src="/Waterfalls.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
+                poster="/Waterfalls-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-85 group-hover:opacity-30"
-              />
+              >
+                <source src="/Waterfalls.mp4" type="video/mp4" />
+                <source src="/Waterfalls.mov" type="video/quicktime" />
+              </video>
             </div>
 
             <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
@@ -111,15 +115,19 @@ export const OutsideWorkspaceSection: React.FC = () => {
           {/* 4. Court Sports & Snooker (Wide - Spans 2 columns) */}
           <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0A0E17] group hover:border-emerald-500/40 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] transition-all duration-700 md:col-span-2">
             {/* Video Background */}
-            <div className="absolute inset-0 bg-black">
+            <div className="absolute inset-0 bg-[#0A0E17]">
               <video
-                src="/IMG_8696.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
+                poster="/IMG_8696-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover object-[center_60%] transition-transform duration-1000 group-hover:scale-105 opacity-85 group-hover:opacity-30"
-              />
+              >
+                <source src="/IMG_8696.mp4" type="video/mp4" />
+                <source src="/IMG_8696.mov" type="video/quicktime" />
+              </video>
             </div>
 
             <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
