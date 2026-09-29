@@ -1,0 +1,290 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+@source "../index.html";
+@source "./**/*.{js,ts,jsx,tsx}";
+
+:root {
+  --bg: #090D16;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #0D1424 0%, #090D16 70%);
+  --surface: #0E1422;
+  --surface-card: rgba(14, 20, 34, 0.5);
+  --surface-card-hover: rgba(19, 27, 46, 0.7);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --text: #F8FAFC;
+  --text-heading: #FFFFFF;
+  --muted: #94A3B8;
+  --faint: #64748B;
+  --accent: #38BDF8;
+  --accent-blue: #2563EB;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+  --font-science: 'Science Gothic', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.font-science {
+  font-family: 'Science Gothic', sans-serif;
+}
+
+.font-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--text-heading);
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090D16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38BDF8;
+}
+
+/* Subtle background grid pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Radiant electric cyan/blue text gradient */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #F0F9FF 0%, #38BDF8 40%, #60A5FA 75%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Multi-layer blurred ambient mesh gradients */
+.ambient-mesh-hero {
+  background: 
+    radial-gradient(ellipse 65% 55% at 50% 30%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(circle 420px at 70% 40%, rgba(99, 102, 241, 0.1) 0%, transparent 55%),
+    radial-gradient(circle 480px at 30% 60%, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
+}
+
+.ambient-mesh-footer {
+  background: 
+    radial-gradient(ellipse 70% 50% at 50% 60%, rgba(56, 189, 248, 0.1) 0%, transparent 65%),
+    radial-gradient(circle 460px at 50% 40%, rgba(37, 99, 235, 0.08) 0%, transparent 60%);
+}
+
+/* Premium Card UI with ultra-light 1px border and faint semi-transparent background */
+.card-premium {
+  background: rgba(14, 20, 34, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(18, 26, 44, 0.6);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 30px 60px -15px rgba(0, 0, 0, 0.75),
+    0 0 32px 0 rgba(56, 189, 248, 0.12);
+}
+
+/* Tactile Primary Button */
+.btn-tactile-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 100%);
+  color: #090D16;
+  font-weight: 600;
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tactile-white:hover {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 0 #FFFFFF,
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 28px rgba(255, 255, 255, 0.25);
+}
+
+.btn-tactile-white:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tactile Accent Blue Button */
+.btn-tactile-accent {
+  background: linear-gradient(180deg, #38BDF8 0%, #2563EB 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
+    0 8px 24px -4px rgba(37, 99, 235, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tactile-accent:hover {
+  background: linear-gradient(180deg, #60A5FA 0%, #1D4ED8 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.5),
+    0 12px 30px -4px rgba(37, 99, 235, 0.65),
+    0 0 24px rgba(56, 189, 248, 0.3);
+}
+
+.btn-tactile-accent:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Tactile Ghost / Dark Button */
+.btn-tactile-ghost {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #E2E8F0;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tactile-ghost:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(56, 189, 248, 0.3);
+  color: #FFFFFF;
+  transform: translateY(-1.5px);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-tactile-ghost:active {
+  transform: translateY(0.5px) scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulsing scroll cue animation */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(18px);
+    opacity: 0.25;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+/* Toast alert notification */
+.toast-notice {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Floating widgets animation for Hero cards */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* Infinite Marquee Ticker for Domain Ribbon */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
