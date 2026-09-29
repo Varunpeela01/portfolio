@@ -48,7 +48,7 @@ export const RefillCaseStudyPage: React.FC<RefillCaseStudyPageProps> = ({ onBack
 
   const [zoomedImage, setZoomedImage] = useState<{ src: string; title: string; tag: string } | null>(null);
 
-  const nextProject = PROJECTS.find((p) => p.id === 'fleet-platform') || PROJECTS[0];
+  const nextProject = PROJECTS.find((p) => p.id === 'fitness-mobile-app') || PROJECTS[3];
 
   return (
     <div className="min-h-screen bg-[#090D16] text-[#94A3B8] font-sans antialiased selection:bg-[#0D9488] selection:text-white">
@@ -1024,13 +1024,13 @@ export const RefillCaseStudyPage: React.FC<RefillCaseStudyPageProps> = ({ onBack
             <div className="space-y-1.5">
               <span className="font-mono text-[10px] text-sky-400 tracking-[0.2em] uppercase">NEXT CASE STUDY →</span>
               <h3 className="text-xl sm:text-2xl font-normal text-white tracking-[-0.03em] group-hover:text-sky-300 transition-colors">
-                HireDesk:{' '}
+                Prevealth:{' '}
                 <em className="font-serif italic font-normal text-[#38BDF8]">
-                  Cross-Platform Fleet Management
+                  Dual-Sided Anti-Aging & Longevity Ecosystem
                 </em>
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 font-light max-w-xl leading-[1.5]">
-                Explore how complex data tables on the desktop logically collapse into actionable, step-by-step tasks on a utilitarian mobile operator interface.
+                Connecting a motivating consumer mobile habit tracker with a high-density clinical care team portal for real-time preventative care.
               </p>
             </div>
 
